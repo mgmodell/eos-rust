@@ -11,6 +11,16 @@ sudo apt-get install -y --no-install-recommends \
     libsqlite3-dev \
     sqlite3
 
+echo "==> Installing Node.js LTS via nvm..."
+# The Rust devcontainer image ships nvm; use it to install Node.js LTS so that
+# cargo-leptos (CSS/JS bundling) and Playwright (e2e tests) can run.
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+# shellcheck source=/dev/null
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+nvm install --lts
+nvm use --lts
+nvm alias default 'lts/*'
+
 echo "==> Adding wasm32 compilation target..."
 rustup target add wasm32-unknown-unknown
 
