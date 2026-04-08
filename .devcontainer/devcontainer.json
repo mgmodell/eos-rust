@@ -1,0 +1,66 @@
+{
+  "name": "eos-rust",
+
+  // Official Rust devcontainer image (Debian-based, ships with rustup + common build tools)
+  "image": "mcr.microsoft.com/devcontainers/rust:1",
+
+  // Add Node.js LTS – required by cargo-leptos for CSS/JS bundling and by Playwright for e2e tests
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+
+  // Install project-specific tooling after the container is created
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  // Persist cargo registry + build cache between rebuilds
+  "mounts": [
+    "source=eos-rust-cargo-registry,target=/usr/local/cargo/registry,type=volume",
+    "source=eos-rust-cargo-git,target=/usr/local/cargo/git,type=volume"
+  ],
+
+  // Environment variables available in every terminal and task
+  "containerEnv": {
+    "DATABASE_URL": "sqlite:eos.db"
+  },
+
+  // Forward the app server and the cargo-leptos hot-reload WebSocket
+  "forwardPorts": [3000, 3001],
+  "portsAttributes": {
+    "3000": {
+      "label": "EOS App (HTTP)",
+      "onAutoForward": "openBrowser"
+    },
+    "3001": {
+      "label": "Hot Reload WebSocket",
+      "onAutoForward": "silent"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Full Rust language support: completions, inlay hints, go-to-definition, inline errors
+        "rust-lang.rust-analyzer",
+        // Native debugger for Rust binaries (LLDB-based)
+        "vadimcn.vscode-lldb",
+        // Browse and query the SQLite database file without leaving VS Code
+        "qwtel.sqlite-viewer",
+        // First-class TOML editing with schema validation for Cargo.toml
+        "tamasfe.even-better-toml",
+        // Shows latest crate versions inline in Cargo.toml and lets you update with one click
+        "fill-labs.dependi"
+      ],
+      "settings": {
+        // Use the SSR feature set for rust-analyzer so server-side code is fully analysed
+        "rust-analyzer.cargo.features": ["ssr"],
+        // Show inlay hints for types and parameter names
+        "rust-analyzer.inlayHints.parameterHints.enable": true,
+        "rust-analyzer.inlayHints.typeHints.enable": true,
+        // Clippy gives richer diagnostics than the default check
+        "rust-analyzer.check.command": "clippy"
+      }
+    }
+  }
+}

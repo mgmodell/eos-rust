@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "DELETE FROM chapter_depends_on_chapter WHERE parent_chapter_id = ? AND child_chapter_id = ? AND thread_id = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "a0725bde7e1d6fc97f737699439f951026f1ca56212f1c43a7f84c2233ed3c95"
+}

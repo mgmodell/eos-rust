@@ -1,0 +1,38 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT ctl.character_id, ctl.line_id, c.name as character_name, l.body as line_body\n           FROM character_to_line ctl\n           JOIN character c ON c.id = ctl.character_id\n           JOIN line l ON l.id = ctl.line_id\n           ORDER BY ctl.character_id, ctl.line_id",
+  "describe": {
+    "columns": [
+      {
+        "name": "character_id",
+        "ordinal": 0,
+        "type_info": "Integer"
+      },
+      {
+        "name": "line_id",
+        "ordinal": 1,
+        "type_info": "Integer"
+      },
+      {
+        "name": "character_name",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "line_body",
+        "ordinal": 3,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "a20233deb4cf7c14db147fd0f60ec27dcc2def4ed8d7a435c89a0a752ed6cb20"
+}
