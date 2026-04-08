@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO chapter DEFAULT VALUES",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": []
+  },
+  "hash": "a3d20c0b2482e3687caf11c3cdcfb997f1214806911f30a5060162fbc0d3ac01"
+}

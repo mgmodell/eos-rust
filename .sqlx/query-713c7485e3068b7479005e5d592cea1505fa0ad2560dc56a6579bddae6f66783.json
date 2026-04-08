@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT OR IGNORE INTO chapter_depends_on_chapter (parent_chapter_id, child_chapter_id, thread_id) VALUES (?, ?, ?)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "713c7485e3068b7479005e5d592cea1505fa0ad2560dc56a6579bddae6f66783"
+}

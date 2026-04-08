@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT OR IGNORE INTO character_to_line (character_id, line_id) VALUES (?, ?)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "abae73a536a4b4b9488b3e2d542144ed1d718536ce353e00b6bdc2c4d1289352"
+}

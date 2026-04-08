@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "UPDATE line SET body = ?, sequence = ?, chapter_id = ? WHERE id = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "3a5226f3407571a16b41f4508a998f708da4d78d0f36cf6099a9858768b5d9d4"
+}

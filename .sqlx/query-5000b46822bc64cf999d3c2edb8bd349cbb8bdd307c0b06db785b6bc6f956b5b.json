@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "DELETE FROM character_to_line WHERE character_id = ? AND line_id = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "5000b46822bc64cf999d3c2edb8bd349cbb8bdd307c0b06db785b6bc6f956b5b"
+}

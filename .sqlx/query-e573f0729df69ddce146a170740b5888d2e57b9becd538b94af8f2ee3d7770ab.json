@@ -1,0 +1,32 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT parent_chapter_id, child_chapter_id, thread_id FROM chapter_depends_on_chapter ORDER BY thread_id, parent_chapter_id",
+  "describe": {
+    "columns": [
+      {
+        "name": "parent_chapter_id",
+        "ordinal": 0,
+        "type_info": "Integer"
+      },
+      {
+        "name": "child_chapter_id",
+        "ordinal": 1,
+        "type_info": "Integer"
+      },
+      {
+        "name": "thread_id",
+        "ordinal": 2,
+        "type_info": "Integer"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "e573f0729df69ddce146a170740b5888d2e57b9becd538b94af8f2ee3d7770ab"
+}
