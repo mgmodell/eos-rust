@@ -4,13 +4,6 @@
   // Official Rust devcontainer image (Debian-based, ships with rustup + common build tools)
   "image": "mcr.microsoft.com/devcontainers/rust:1",
 
-  // Add Node.js LTS – required by cargo-leptos for CSS/JS bundling and by Playwright for e2e tests
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
-    }
-  },
-
   // Install project-specific tooling after the container is created
   "postCreateCommand": "bash .devcontainer/post-create.sh",
 
